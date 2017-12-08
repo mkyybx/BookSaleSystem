@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<TabPane prefHeight="527.0" prefWidth="807.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="homework7._14211278_满柯宇_7_MainUI">
+   <tabs>
+      <Tab text="销售">
+         <content>
+            <HBox>
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="526.0" prefWidth="460.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Label alignment="CENTER" text="书架(可点击选择)">
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </HBox.margin></Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                        <TableView fx:id="shelfTable" prefHeight="442.0" prefWidth="299.0">
+                           <columns>
+                              <TableColumn fx:id="shelfISBNColumn" prefWidth="154.0" text="ISBN" />
+                              <TableColumn fx:id="shelfNameColumn" prefWidth="229.0" text="书名" />
+                              <TableColumn fx:id="shelfPriceColumn" prefWidth="76.0" text="单价" />
+                           </columns>
+                        </TableView>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="21.0" prefWidth="116.0" text="ISBN:" />
+                              <TextField fx:id="shelfISBN" prefHeight="31.0" prefWidth="157.0" />
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Label alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="116.0" text="数量:" />
+                              <TextField fx:id="shelfCount" prefHeight="31.0" prefWidth="56.0" />
+                              <Label prefHeight="21.0" prefWidth="17.0" text="本" />
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Button fx:id="shelfButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#shelfButtonOnClick" text="加入购物车">
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <Separator orientation="VERTICAL" prefHeight="400.0" prefWidth="0.0" />
+                  <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="303.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="37.0" prefWidth="302.0">
+                           <children>
+                              <Label text="购物车" />
+                           </children>
+                        </HBox>
+                        <TableView fx:id="cartTable" prefHeight="369.0" prefWidth="302.0">
+                           <columns>
+                              <TableColumn fx:id="cartTableNameColumn" prefWidth="244.0" text="书名" />
+                              <TableColumn fx:id="cartTableQuantityColumn" prefWidth="58.0" text="数量" />
+                           </columns>
+                        </TableView>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Label fx:id="cartText" alignment="CENTER" prefHeight="21.0" prefWidth="238.0" text="总价:0元" />
+                              <Button fx:id="cartButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#cartButtonOnClick" prefHeight="31.0" prefWidth="94.0" text="购买" />
+                           </children>
+                        </HBox>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+         </content>
+      </Tab>
+      <Tab text="书籍管理">
+         <content>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="488.0" prefWidth="535.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="34.0" prefWidth="460.0">
+                           <children>
+                              <Label alignment="CENTER" text="书架(重复添加可以修改)">
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                        <TableView fx:id="manageShelfTable" prefHeight="454.0" prefWidth="460.0">
+                           <columns>
+                              <TableColumn fx:id="manageISBNColumn" prefWidth="188.0" text="ISBN" />
+                              <TableColumn fx:id="manageNameColumn" prefWidth="196.0" text="书名" />
+                              <TableColumn fx:id="managePriceColumn" prefWidth="56.0" text="单价" />
+                              <TableColumn fx:id="manageTypeColumn" prefWidth="94.0" text="类型" />
+                           </columns>
+                        </TableView>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <Separator orientation="VERTICAL" prefHeight="400.0" prefWidth="0.0" />
+                  <VBox alignment="CENTER" prefHeight="488.0" prefWidth="216.0">
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </HBox.margin>
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="41.0" prefWidth="321.0">
+                           <children>
+                              <Label alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="90.0" text="ISBN:  " />
+                              <TextField fx:id="manageISBN" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="41.0" prefWidth="200.0">
+                           <children>
+                              <Label alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="90.0" text="书名:  " />
+                              <TextField fx:id="manageBookName" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="41.0" prefWidth="200.0">
+                           <children>
+                              <Label alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="90.0" text="单价:  " />
+                              <TextField fx:id="managePrice" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="41.0" prefWidth="200.0">
+                           <children>
+                              <ComboBox fx:id="manageBookType" prefHeight="31.0" prefWidth="189.0" promptText="请选择书籍类型" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="41.0" prefWidth="200.0">
+                           <children>
+                              <Button fx:id="manageButton" alignment="CENTER" mnemonicParsing="false" onAction="#manageButtonOnClick" text="添加" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </content></Tab>
+      <Tab text="优惠管理">
+         <content>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="488.0" prefWidth="535.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="34.0" prefWidth="460.0">
+                           <children>
+                              <Label alignment="CENTER" text="优惠信息(右键可以删除项目)">
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                        <TableView fx:id="discountTable" prefHeight="454.0" prefWidth="460.0">
+                           <columns>
+                              <TableColumn fx:id="discountTableColumnId" prefWidth="75.0" text="优惠编号" />
+                              <TableColumn fx:id="discountTableColumnBookType" prefWidth="103.0" text="书籍类型" />
+                              <TableColumn fx:id="discountTableColumnName" prefWidth="129.0" text="优惠名称" />
+                              <TableColumn fx:id="discountTableColumnType" prefWidth="118.0" text="优惠类型" />
+                              <TableColumn fx:id="discountTableColumnValue" prefWidth="109.0" text="折扣幅度" />
+                           </columns>
+                           <contextMenu>
+                              <ContextMenu>
+                                <items>
+                                  <MenuItem mnemonicParsing="false" onAction="#discountDeletionOnAction" text="删除" />
+                                </items>
+                              </ContextMenu>
+                           </contextMenu>
+                        </TableView>
+                     </children>
+                  </VBox>
+                  <Separator orientation="VERTICAL" prefHeight="400.0" prefWidth="0.0" />
+                  <TabPane prefHeight="488.0" prefWidth="267.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="添加简单优惠">
+                           <content>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="51.0" prefWidth="267.0">
+                                       <children>
+                                          <ComboBox fx:id="simpleDiscountBookType" prefHeight="31.0" prefWidth="189.0" promptText="请选择书籍类型" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="51.0" prefWidth="200.0">
+                                       <children>
+                                          <ComboBox fx:id="simpleDiscountType" prefHeight="31.0" prefWidth="187.0" promptText="请选择优惠类型" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="51.0" prefWidth="200.0">
+                                       <children>
+                                          <Label alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="93.0" text="优惠名称:  " />
+                                          <TextField fx:id="simpleDiscountName" prefHeight="31.0" prefWidth="163.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="51.0" prefWidth="200.0">
+                                       <children>
+                                          <Label alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="93.0" text="折扣幅度:  " />
+                                          <TextField fx:id="simpleDiscountValue" prefHeight="31.0" prefWidth="163.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="51.0" prefWidth="200.0">
+                                       <children>
+                                          <Button fx:id="simpleDiscountButton" alignment="CENTER" mnemonicParsing="false" onAction="#simpleDiscountButtonOnClick" text="添加" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </content>
+                        </Tab>
+                        <Tab text="添加组合优惠">
+                           <content>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <VBox alignment="CENTER">
+                                       <children>
+                                          <Label text="请选择优惠信息(按住Ctrl多选):" />
+                                       </children>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" top="10.0" />
+                                       </VBox.margin>
+                                    </VBox>
+                                    <VBox>
+                                       <children>
+                                          <ListView fx:id="combinedDiscountList" prefHeight="200.0" prefWidth="200.0" />
+                                       </children>
+                                    </VBox>
+                                    <HBox alignment="CENTER" prefHeight="51.0" prefWidth="267.0">
+                                       <children>
+                                          <ComboBox fx:id="combinedDIscountBookType" prefHeight="31.0" prefWidth="189.0" promptText="请选择书籍类型" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="51.0" prefWidth="200.0">
+                                       <children>
+                                          <ComboBox fx:id="combinedDiscountType" prefHeight="31.0" prefWidth="187.0" promptText="请选择优惠类型" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="51.0" prefWidth="200.0">
+                                       <children>
+                                          <Label alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="93.0" text="优惠名称:  " />
+                                          <TextField fx:id="combinedDiscountName" prefHeight="31.0" prefWidth="163.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="51.0" prefWidth="200.0">
+                                       <children>
+                                          <Button fx:id="combinedDiscountButton" alignment="CENTER" mnemonicParsing="false" onAction="#combinedDiscountButtonOnClick" text="添加" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </HBox>
+         </content>
+      </Tab>
+   </tabs>
+</TabPane>
